@@ -2,6 +2,8 @@ process:
 	Create a cylinder and subtract inside
 	Create a sphere polar array, create a rotated copy that is offset from original
 	Subtract polar arrays from cylinder
+	Copy Cylinder, enlarge to create outer sleeve
+	Create blocks and boolean subtract to adjust height
 
 inner_sleeve: 
 	inner_radius: 700 mm
