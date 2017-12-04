@@ -21,6 +21,14 @@ outer_sleeve:
 	height: 300 mm
 	y_position: 
 
+outer_sleeve_cutting_box:
+	z_bottom: 228.6 mm
+	width: 1600 mm
+	length: 1600 mm
+	x: -800 mm
+	y: -800 mm
+	z_top: 533.4	
+
 outer_sleeve_gap:
 
 locking_bars:
