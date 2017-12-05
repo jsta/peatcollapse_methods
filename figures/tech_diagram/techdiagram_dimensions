@@ -31,7 +31,7 @@ outer_sleeve_cutting_box:
 	y: -800 mm
 	z_top: 533.4	
 
-outer_sleeve_gap:
+outer_sleeve_gap: 80 mm
 
 locking_bars:
 	height: 300 mm
