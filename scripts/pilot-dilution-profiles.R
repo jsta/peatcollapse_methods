@@ -67,8 +67,8 @@ pilot_dilution_profiles <- function(fpath, outpath, dim = NA){
 }
 
 library(magrittr)
-fpath <- list.files("data", "*.xlsx", full.names = TRUE, include.dirs = TRUE)
-outpath <- file.path("figures", "dilution-profile.png")
+fpath <- list.files(pattern = "xlsx", full.names = TRUE, include.dirs = TRUE)
+outpath <- file.path("../figures", "dilution-profile.png")
 #fpath <- list.files("data", "*.xlsx", full.names = TRUE, include.dirs = TRUE) 
 #outpath <- file.path("figures", "dilution-profile.png")
 pilot_dilution_profiles(fpath, outpath)

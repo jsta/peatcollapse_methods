@@ -1,4 +1,4 @@
-datapath <- "/home/jose/Documents/Science/Data/peatcollapse/fieldallv8.csv"
+datapath <- "../data/fieldallv9.csv"
 outpath <- file.path("../figures", "chamber-leakage.png")
 
 cfieldall <- read.csv(datapath, stringsAsFactors = FALSE)

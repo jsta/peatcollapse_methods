@@ -3,7 +3,7 @@ library(dplyr)
 # library(peatcollapse)
 library(cowplot)
 
-cfieldall <- read.csv("data/fieldallv9.csv", stringsAsFactors = FALSE)
+cfieldall <- read.csv("../data/fieldallv9.csv", stringsAsFactors = FALSE)
 cfieldall$collect_date <- as.POSIXct(cfieldall$collect_date)
 cfieldall$collect_date <- strftime(cfieldall$collect_date, format = "%Y-%m")
 
@@ -45,9 +45,9 @@ gg_fw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "FW")
 gg_bw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "BW")
 
 gg <- cowplot::plot_grid(gg_fw, gg_bw, nrow = 2, ncol = 1, 
-									 labels = c("A", "B"), hjust = -22)
+									 labels = c("A", "B"), hjust = -35)
 
-ggsave(filename = "figures/chem-ts.png")
+ggsave(filename = "../figures/chem-ts.png")
 
 # par(mar = c(4, 5, 2, 1))
 # 
