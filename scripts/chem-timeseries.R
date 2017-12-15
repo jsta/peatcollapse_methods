@@ -4,6 +4,7 @@ library(dplyr)
 library(cowplot)
 
 cfieldall <- read.csv("../data/fieldallv9.csv", stringsAsFactors = FALSE)
+# cfieldall <- read.csv("data/fieldallv9.csv", stringsAsFactors = FALSE)
 cfieldall$collect_date <- as.POSIXct(cfieldall$collect_date)
 cfieldall$collect_date <- strftime(cfieldall$collect_date, format = "%Y-%m")
 
@@ -15,6 +16,8 @@ cfieldall <- mutate(cfieldall, trt = case_when(
 	site == "FW" & chamber %in% nonchamber_fw ~ "nonchamber", 
 	site == "BW" & chamber %in% nonchamber_bw ~ "nonchamber", 
 	TRUE ~ trt))
+
+cfieldall$trt <- factor(cfieldall$trt, levels = c("treatment", "control", "nonchamber"))
 
 cfieldall <- group_by(cfieldall, collect_date, trt, site, pwsw, inout)
 cfieldall <- select(cfieldall, site:inout, trt, 
@@ -37,17 +40,24 @@ pc_plot <- function(dt, x, y, site){
 		geom_point(aes_string(x = quo_name(x), y = "y", color = "trt")) + 
 		geom_errorbar(data = dt, aes_string(x = quo_name(x), 
 											ymin = "lower", ymax = "upper", color = "trt"), width = 0.2) + 
-		cowplot::theme_cowplot() + theme(axis.text.x = element_text(angle = 90)) + 
+		cowplot::theme_cowplot() + theme(axis.text.x = element_text(angle = 90), 
+																		 legend.justification = "top") + 
 		xlab("") + ylab(y) + labs(color = "")
 }
 
 gg_fw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "FW")
 gg_bw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "BW")
 
-gg <- cowplot::plot_grid(gg_fw, gg_bw, nrow = 2, ncol = 1, 
-									 labels = c("A", "B"), hjust = -35)
+gg <- cowplot::plot_grid(gg_fw + theme(legend.position="none"), 
+												 gg_bw + theme(legend.position="none"), 
+												 nrow = 2, ncol = 1, labels = c("A", "B"), hjust = -40)
 
-ggsave(filename = "../figures/chem-ts.png")
+legend <- get_legend(gg_fw + theme(legend.position = "bottom"))
+
+gg_res <- cowplot::plot_grid(gg, legend, ncol = 1, rel_heights = c(1, 0.1))
+
+
+ggsave(filename = "../figures/chem-ts.png", height = 6, width = 6)
 
 # par(mar = c(4, 5, 2, 1))
 # 

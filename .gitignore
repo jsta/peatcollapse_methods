@@ -6,3 +6,7 @@
 *.log
 *.gz
 *.spl
+old
+*.docx
+.markdrive
+reviewer_comments.md
