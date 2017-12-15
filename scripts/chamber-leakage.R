@@ -3,8 +3,6 @@ outpath <- file.path("../figures", "chamber-leakage.png")
 
 cfieldall <- read.csv(datapath, stringsAsFactors = FALSE)
 cfieldall$collect_date <- as.POSIXct(cfieldall$collect_date)
-#cfieldall$fac <- paste(cfieldall$trt, cfieldall$site, cfieldall$inout, sep = "\n")
-#cfieldall$fac <- factor(cfieldall$fac, levels = c("control\nBW\nout", "control\nBW\nin", "treatment\nBW\nout", "treatment\nBW\nin", "control\nFW\nout", "control\nFW\nin", "treatment\nFW\nout", "treatment\nFW\nin"))
 
 library(ggplot2)
 
@@ -25,12 +23,17 @@ theme_opts <- list(ggplot2::theme(
 	legend.position = "none",
 	plot.margin = unit(c(1, 1, 1, 9), "lines")))
 
-gg <- ggplot2::ggplot(data = cfieldall[cfieldall$pwsw == "PW",], ggplot2::aes(x = interaction(inout, trt, site), y = salinity))
-gg <- gg + geom_boxplot(notch = TRUE, outlier.colour = "white") + coord_flip(ylim = c(0, 21))
+gg <- ggplot2::ggplot(data = cfieldall[cfieldall$pwsw == "PW",], 
+											ggplot2::aes(x = interaction(inout, trt, site), y = salinity))
+gg <- gg + geom_boxplot(notch = TRUE, outlier.colour = "white") + 
+	coord_flip(ylim = c(0, 21))
 
-gg <- gg + annotate(geom = "text", x = c(2.5, 6.5), y = -7, label = unique(cfieldall$site)[1:2])
-gg <- gg + annotate(geom = "text", x = c(1.5, 3.5, 5.5, 7.5), y = -4.5, label = c("control", "treatment", "control", "treatment"))
-gg <- gg + annotate(geom = "text", x = c(1:8), y = -3.2, label = c(rep(c("inside", "outside"), 4)))
+gg <- gg + annotate(geom = "text", x = c(2.5, 6.5), y = -7, 
+										label = unique(cfieldall$site)[1:2])
+gg <- gg + annotate(geom = "text", x = c(1.5, 3.5, 5.5, 7.5), y = -4.5, 
+										label = c("control", "treatment", "control", "treatment"))
+gg <- gg + annotate(geom = "text", x = c(1:8), y = -3.2, 
+										label = c(rep(c("inside", "outside"), 4)))
 
 gg <- gg + ggplot2::ylab("Salinity") + theme_opts 
 
@@ -41,9 +44,9 @@ gg <- gridExtra::arrangeGrob(gg)
 
 ggplot2::ggsave(filename = outpath, plot = gg, width = 8, height = 7)
 
-dt <- cfieldall[cfieldall$pwsw == "PW",]
-x <- interaction(dt$inout, dt$trt, dt$site)
-y <- dt$salinity
+# dt <- cfieldall[cfieldall$pwsw == "PW",]
+# x <- interaction(dt$inout, dt$trt, dt$site)
+# y <- dt$salinity
 # par(mar = c(7, 4, 0, 0))
 # 
 # png(outpath)
