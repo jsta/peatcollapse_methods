@@ -4,6 +4,9 @@ construct-images:
 construct-figures:
 	cd data && make construct-figures
 
+construct-tables:
+	cd tables && make construct-tables
+
 all: construct-images construct-figures
 	echo "make complete"
 
