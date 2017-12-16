@@ -10,11 +10,13 @@
  
 ## R packages
 
-	* svglite
+ * svglite
 	
-	* ggplot2
+ * ggplot2
 	
-	* cowplot
+ * cowplot
+ 
+ * dplyr
 
 ## Build
 
