@@ -6,4 +6,6 @@ Figure 3: Difference between treatment, control, and nonchamber-control porewate
 
 Figure 4: Fine-scale dilution profile of salt additions to a treatment mesocosm.
 
-Figure 5: Comparison between porewater salinity measured in the outside and inside-chamber sampling  wells at the freshwater and brackish wetland sites. Treatment and control measurements are colored following Fig. 3.
+Figure 5: Comparison between porewater salinity measured in the outside and inside-chamber sampling  wells at the freshwater and brackish wetland sites. Treatment and control measurements are colored following Figure 3.
+
+Table 1: Parts list for construction of a single mesososm chamber.
