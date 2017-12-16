@@ -2,6 +2,10 @@ construct-figures:
 	Rscript -e 'source("../scripts/chem-timeseries.R")'
 	Rscript -e 'source("../scripts/chamber-leakage.R")'
 	Rscript -e 'source("../scripts/pilot-dilution-profiles.R")'
+	
+convert-figures: construct-figures
+	convert ../figures/dilution-profile.svg ../figures/dilution-profile.png
+	convert ../figures/chem-ts.svg ../figures/chem-ts.png
 
 montage-figures:
 	convert ../figures/chem-ts_bw-sal.png -trim ../figures/chem-ts_bw-sal.png

@@ -44,10 +44,10 @@ pilot_dilution_profiles <- function(fpath, outpath, dim = NA){
 		panel.background = ggplot2::element_blank(),
 		plot.background = ggplot2::element_rect(fill="white"),
 		panel.border = ggplot2::element_blank(),
-		axis.line = ggplot2::element_line(),
+		axis.line = ggplot2::element_line(size = 1.5),
 		axis.text.x = ggplot2::element_text(size = 12),
 		axis.text.y = ggplot2::element_text(size = 12),
-		axis.ticks = ggplot2::element_line(),
+		axis.ticks = ggplot2::element_line(size = 1.5),
 		axis.title.x = ggplot2::element_text(size = 12),
 		axis.title.y = ggplot2::element_text(size = 12),
 		plot.title = ggplot2::element_text(size = 22),
@@ -63,7 +63,7 @@ pilot_dilution_profiles <- function(fpath, outpath, dim = NA){
 	gg + ggplot2::ylab("salinity") +	ggplot2::xlab("days post dosing") + 
 		theme_opts
 	
-	ggplot2::ggsave(filename = outpath, width = 7, height = 5)
+	ggplot2::ggsave(filename = outpath, width = 5, height = 4)
 }
 
 library(magrittr)

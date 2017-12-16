@@ -2,9 +2,19 @@
 
 ## Dependencies
 
+### System
+
  * imagemagick
 
  * GNU make
+ 
+## R packages
+
+	* svglite
+	
+	* ggplot2
+	
+	* cowplot
 
 ## Build
 

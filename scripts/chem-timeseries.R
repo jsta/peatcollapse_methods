@@ -40,24 +40,29 @@ pc_plot <- function(dt, x, y, site){
 		geom_point(aes_string(x = quo_name(x), y = "y", color = "trt")) + 
 		geom_errorbar(data = dt, aes_string(x = quo_name(x), 
 											ymin = "lower", ymax = "upper", color = "trt"), width = 0.2) + 
-		cowplot::theme_cowplot() + theme(axis.text.x = element_text(angle = 90), 
-																		 legend.justification = "top") + 
+		theme(axis.text.x = element_text(angle = 90), 
+					legend.justification = "top", 
+					axis.line.x = element_line(colour = "black", size = 1.1), 
+					axis.line.y = element_line(colour = "black", size = 1.1), 
+					axis.ticks = element_line(colour = "black", size = 1.1)) + 
 		xlab("") + ylab(y) + labs(color = "")
 }
 
-gg_fw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "FW")
+(gg_fw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "FW"))
+
 gg_bw <- pc_plot(dt = cfieldall, x = collect_date, y = salinity, site = "BW")
 
 gg <- cowplot::plot_grid(gg_fw + theme(legend.position="none"), 
 												 gg_bw + theme(legend.position="none"), 
-												 nrow = 2, ncol = 1, labels = c("A", "B"), hjust = -40)
+												 nrow = 2, ncol = 1, labels = c("A", "B"), hjust = -29)
 
 legend <- get_legend(gg_fw + theme(legend.position = "bottom"))
+saveRDS(legend, "../figures/legend.rds")
 
 gg_res <- cowplot::plot_grid(gg, legend, ncol = 1, rel_heights = c(1, 0.1))
 
 
-ggsave(filename = "../figures/chem-ts.png", height = 6, width = 6)
+ggsave(filename = "../figures/chem-ts.png", height = 6, width = 4.6)
 
 # par(mar = c(4, 5, 2, 1))
 # 
