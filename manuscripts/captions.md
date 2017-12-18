@@ -1,4 +1,4 @@
-Figure 1: Mesocosm chamber technical diagram showing A) the primary cylinder seam, B) upper water exchange holes, C) lower water exchange holes, D) collar locking device, and E) vertical alignment brackets.
+Figure 1: Mesocosm chamber technical diagram showing A) the primary cylinder seam, B) upper water exchange holes, C) lower water exchange holes, D) collar locking device, and E) vertical alignment brackets. Labeled units are in meters.
 
 Figure 2: Site photographs showing A) elevated dosing boardwalks, B) close-up of deployed mesocosm, and C) sampling well installation.
 
