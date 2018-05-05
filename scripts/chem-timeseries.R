@@ -62,7 +62,7 @@ saveRDS(legend, "../figures/legend.rds")
 gg_res <- cowplot::plot_grid(gg, legend, ncol = 1, rel_heights = c(1, 0.1))
 
 
-ggsave(filename = "../figures/chem-ts.png", height = 6, width = 4.6)
+ggsave(filename = "../figures/03_chem-ts.png", height = 6, width = 4.6)
 
 # par(mar = c(4, 5, 2, 1))
 # 

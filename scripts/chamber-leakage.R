@@ -1,6 +1,6 @@
 datapath <- "../data/fieldallv9.csv"
 # datapath <- "data/fieldallv9.csv"
-outpath <- file.path("../figures", "chamber-leakage.png")
+outpath <- file.path("../figures", "05_chamber-leakage.png")
 
 cfieldall <- read.csv(datapath, stringsAsFactors = FALSE)
 cfieldall$collect_date <- as.POSIXct(cfieldall$collect_date)
