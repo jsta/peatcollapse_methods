@@ -5,9 +5,27 @@ title: In situ simulation of sea-level rise impacts on coastal wetlands using a 
 author:
   - name: Joseph Stachelek
     affiliation: a
+  - name: Stephen P. Kelly
+    affiliation: b
+  - name: Fred H. Sklar
+    affiliation: b
+  - name: Carlos Coronado-Molina
+    affiliation: b
+  - name: Tiffany Troxler
+    affiliation: c,d,e
+  - name: Laura Bauman
+    affiliation: c
 address:
   - code: a
     address: Department of Fisheries and Wildlife, Michigan State University, East Lansing, MI, USA
+  - code: b
+    address: South Florida Water Management District, Everglades Division, West Palm Beach, Florida
+  - code: c
+    address: Department of Biological Sciences, Florida International University, Miami, Florida
+  - code: d
+    address: Southeast Environmental Research Center (SERC), Florida International University, Miami, Florida
+  - code: e
+    address: Sea Level Solutions Center, Florida International University, Miami, Florida
 
 # For footer text  TODO(fold into template, allow free form two-authors)
 lead_author_surname: Stachelek
@@ -86,13 +104,76 @@ knitr::opts_chunk$set(echo = FALSE, fig.path = "../figures/", dpi=300, fig.heigh
 
 ## INTRODUCTION
 
-Tide gauge records and satellite altimetry measurements clearly show evidence of global sea level rise (SLR) from the late 19th century to present (Church & White, 2011). In addition, recent modelling efforts have projected an increasing rate of global SLR into the future (Rahmstorf, 2007). One important aspect of SLR is that it is not uniform. Rather, the sea level experienced along a given coastal area is a function not only of the magnitude and acceleration of global sea levels but also their combination with regional ocean currents, teleconnection patterns, and patterns of glacial isostatic adjustment (Clark, Farrell, & Peltier, 1978; Park & Sweet, 2015). As a result, some locations may experience minimal SLR, whereas others could experience additional SLR of as much as 0.6 m by 2060 (Zhang, Dittmar, Ross, & Bergh, 2011). 
-	\newline \indent Another important aspect of SLR is that its potential impact on coastal wetlands is a function not only of increased hydroperiods but also of elevated salinity (Spalding & Hester, 2007). Each of these mechanisms is likely to have specific effects on biogeochemical feed-backs, carbon cycling, and wetland plant adaptation (Herbert et al., 2015). In addition, there is likely to be spatial variability in the response of specific wetland processes to either increased hydroperiods, elevated salinity, or both. Overall, these knowledge gaps limit our understanding of spatial variability in SLR impacts, our ability to forecast these impacts on coastal wetlands, and our capacity to identify place-specific process thresholds (Cherry, McKee, & Grace, 2009).
-\newline \indent Such knowledge gaps can be addressed in one of several ways. The first and most straightforward approach is passive monitoring of wetland elevation trends (e.g., Webb et al., 2013). Another approach for addressing SLR knowledge gaps is simulation modelling (e.g., Jiang, DeAngelis, Anderson, & Smith, 2014). However, both passive monitoring and simulation modelling approaches lack the power to confirm specific process thresholds unless paired with a suite of additional field-based studies. A final approach, which is the subject of this study, is experimental manipulation where a set of experimental “treatment” wetland units are exposed to SLR impacts and compared with a set of experimental “controls” (e.g., Cherry, Ramseur, Sparks, & Cebrian, 2015; Craft et al., 2016; Langley, Mozdzer, Shepard, Hagerty, & Patrick Megonigal, 2013; Lee, De Meo, Thomas, Tillett, & Neubauer, 2016, Rasser, 2009; Spalding & Hester, 2007).
-\newline \indent These experimental manipulation approaches are especially powerful because they can provide a specific test of ecological mechanisms across many systems. In practice, these manipulations typically involve isolation of discrete sections of wetland sediment in order to directly lengthen wetland hydroperiods, elevate sediment porewater (interstitial) salinity, or a combination of the two. The physical setup for these manipulations ranges from very simple sediment filled buckets (Langley, McKee, Cahoon, Cherry, & Megonigal, 2009, Rasser, 2009) to more elaborate weirs \citep{cherry_testing_2015}, tiered cylinder designs (Langley et al., 2013), and electronically controlled saltwater distributions systems (Lee et al. 2016). 
-\newline \indent The motivation for this study was to design an experimental manipulation approach that would alleviate two of our perceived short-comings of existing approaches. Namely, that existing approaches have primarily been laboratory based and that existing approaches have used relatively small sediment volumes (10–200 L) treated over a short time period (weeks—months). As a result, there is some question about whether or not experimental conditions in these prior studies adequately represent natural conditions and whether such short-term studies can be relied on to forecast SLR impacts which take place over the course of years to decades.
- \newline \indent With these concerns in mind, we designed a manipulation apparatus and experimental protocol with two major design goals (1) maximize the delivery and control of experimental salt doses while (2) introducing greater realism by maintaining experimental units in situ and minimizing disturbance to the local emergent plant and periphyton communities. Here, we describe the features of our design effort relative to our two major design goals. In addition, we report on some tests of our design using a case study set in the Florida Everglades. Our case study specifically tested the hypothesis that the sediment porewater salinity of enclosed wetland units could be elevated by repeated exposure to salt treatments. This work was completed as part of a larger study to examine the response of coastal peats to saltwater intrusion and to assess whether such intrusion disrupts soil carbon balance and leads to decreased soil structural integrity (i.e., peat collapse, Chambers et 
-al., 2014;  CISRERP 2014, Troxler et al., In press).
+Tide gauge records and satellite altimetry measurements clearly show
+evidence of global sea level rise (SLR) from the late 19th century to
+present \citep{church_sea-level_2011}. In addition, recent modelling
+efforts have projected an increasing rate of global SLR into the future
+\citep{rahmstorf_semi-empirical_2007}. One important aspect of SLR is
+that it is not uniform. Rather, the sea level experienced along a given
+coastal area is a function not only of the magnitude and acceleration of
+global sea levels but also their combination with regional ocean
+currents, teleconnection patterns, and patterns of glacial isostatic
+adjustment \citep{park_accelerated_2015}(Clark, Farrell, \& Peltier,
+1978). As a result, some locations may experience minimal SLR, whereas
+others could experience additional SLR of as much as 0.6 m by 2060
+\citep{zhang_assessment_}. \newline \indent Another important aspect of
+SLR is that its potential impact on coastal wetlands is a function not
+only of increased hydroperiods but also of elevated salinity
+\citep{SpaldingInteractiveeffectshydrology2007}. Each of these
+mechanisms is likely to have specific effects on biogeochemical
+feed-backs, carbon cycling, and wetland plant adaptation
+\citep{Herbertglobalperspectivewetland2015}. In addition, there is
+likely to be spatial variability in the response of specific wetland
+processes to either increased hydroperiods, elevated salinity, or both.
+Overall, these knowledge gaps limit our understanding of spatial
+variability in SLR impacts, our ability to forecast these impacts on
+coastal wetlands, and our capacity to identify place-specific process
+thresholds \citep{cherry_elevated_2009}. \newline \indent Such knowledge
+gaps can be addressed in one of several ways. The first and most
+straightforward approach is passive monitoring of wetland elevation
+trends \citep[e.g.][]{webb_global_2013}. Another approach for addressing
+SLR knowledge gaps is simulation modelling \citep[e.g.][]{jiang_analysis_2014}. However, both passive monitoring and
+simulation modelling approaches lack the power to confirm specific
+process thresholds unless paired with a suite of additional field-based
+studies. A final approach, which is the subject of this study, is
+experimental manipulation where a set of experimental
+\texttt{treatment\textquotesingle{}\textquotesingle{}\ wetland\ units\ are\ exposed\ to\ SLR\ impacts\ and\ compared\ with\ a\ set\ of\ experimental}controls'' \citep[][]{cherry_testing_2015, LangleyTidalmarshplant2013a, SpaldingInteractiveeffectshydrology2007}
+(e.g., Craft et al., 2016; Lee, De
+Meo, Thomas, Tillett, \& Neubauer, 2016, Rasser, 2009). \newline \indent These experimental manipulation
+approaches are especially powerful because they can provide a specific
+test of ecological mechanisms across many systems. In practice, these
+manipulations typically involve isolation of discrete sections of
+wetland sediment in order to directly lengthen wetland hydroperiods,
+elevate sediment porewater (interstitial) salinity, or a combination of
+the two. The physical setup for these manipulations ranges from very
+simple sediment filled buckets (Langley, McKee, Cahoon, Cherry, \&
+Megonigal, 2009, Rasser, 2009) to more elaborate weirs
+\citep{cherry_testing_2015}, tiered cylinder designs (Langley et al.,
+2013), and electronically controlled saltwater distributions systems \citep{LeeDesignConstructionAutomated2016}. \newline \indent The motivation for this study was to
+design an experimental manipulation approach that would alleviate two of
+our perceived short-comings of existing approaches. Namely, that
+existing approaches have primarily been laboratory based and that
+existing approaches have used relatively small sediment volumes (10--200
+L) treated over a short time period (weeks---months). As a result, there
+is some question about whether or not experimental conditions in these
+prior studies adequately represent natural conditions and whether such
+short-term studies can be relied on to forecast SLR impacts which take
+place over the course of years to decades. \newline \indent With these
+concerns in mind, we designed a manipulation apparatus and experimental
+protocol with two major design goals (1) maximize the delivery and
+control of experimental salt doses while (2) introducing greater realism
+by maintaining experimental units in situ and minimizing disturbance to
+the local emergent plant and periphyton communities. Here, we describe
+the features of our design effort relative to our two major design
+goals. In addition, we report on some tests of our design using a case
+study set in the Florida Everglades. Our case study specifically tested
+the hypothesis that the sediment porewater salinity of enclosed wetland
+units could be elevated by repeated exposure to salt treatments. This
+work was completed as part of a larger study to examine the response of
+coastal peats to saltwater intrusion and to assess whether such
+intrusion disrupts soil carbon balance and leads to decreased soil
+structural integrity \citep[i.e., peat collapse][]{chambersBiogeochemicalEffectsSimulated2014}
+CISRERP 2014, Troxler et al., In press).
 
 ## MATERIALS AND METHODS
 
