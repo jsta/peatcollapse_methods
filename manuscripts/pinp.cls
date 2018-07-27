@@ -281,7 +281,7 @@
 
 \makeatletter
 \fancypagestyle{firststyle}{
-   \fancyfoot[R]{\footerfont \printpinpfootercontents\hspace{7pt}|\hspace{7pt}\textbf{\today}\hspace{7pt}|\hspace{7pt}\textbf{\thepage\textendash\pageref{LastPage}}}
+\fancyhead[L]{This is an Accepted Manuscript of an article published in Methods in Ecology and Evolution \\ DOI{:} \href{https://doi.org/10.1111/2041-210X.13028}{10.1111/2041-210X.13028}}\fancyfoot[R]{\footerfont \printpinpfootercontents\hspace{7pt}|\hspace{7pt}\textbf{\today}\hspace{7pt}|\hspace{7pt}\textbf{\thepage\textendash\pageref{LastPage}}}
    \fancyfoot[L]{\footerfont\@ifundefined{@doi}{}{\@doi}}
 }
 \makeatother
@@ -412,6 +412,7 @@ THE ABSTRACT\vskip12pt}\let\go\relax\fi
 
 %% Custom title page 
 \renewcommand{\@maketitle}{%
+\vspace{2em}
 {%
 \ifthenelse{\boolean{shortarticle}}
 {\ifthenelse{\boolean{singlecolumn}}{}{
